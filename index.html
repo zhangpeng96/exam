@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>鸣墨题库</title>
+<link rel="shortcut icon" href="http://www.zhangpeng96.com/favicon.ico" />
+<link rel="apple-touch-icon" href="http://7xn2y0.com1.z0.glb.clouddn.com/assets/touch-icons/apple-touch-icon-exam-precomposed.png" />
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+<title>每日录入</title>
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/main.css" />
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+  "HTML-CSS": {
+    linebreaks: { automatic: true, width: "container" }          
+  }              
+});
+</script>
+<script type="text/javascript" src="program.js"></script>
+<!-- <script type="text/javascript" src="code.min.js"></script> -->
+<style></style>
+
+<body>
+<div class="header" >
+  <div class="logo"><img src="assets/img/logo-2.png"></div>
+</div>
+<div class="fill-header"></div>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade in active" id="100">
+    <div class="context">
+      题目开始
+    </div>
+    <div class="next"><a href="#101" open-pos="1"  data-toggle="tab">下一题</a></div>
+  </div>
+
+  <div class="tab-pane fade" id="101">
+    <div class="context">He _____ a lot of experience in finance while working abroad.</div>
+    <ul id="myTab" class="nav nav-tabs">
+      <li class="opt" opt-order="1"> <a>A. accumulated</a> </li>
+      <li class="opt" opt-order="2"> <a>B. adopted</a> </li>
+      <li class="opt" opt-order="3"> <a>C. assembled</a> </li>
+      <li class="opt" opt-order="4"> <a>D. required</a> </li>
+    </ul>
+    <div class="next"><a href="#102" open-pos="2"  data-toggle="tab">下一题</a></div>
+  </div>
+
+  <div class="tab-pane fade" id="102">
+    <div class="context">「行列」设${{D}_{4}}$的某行元素全为2且${{D}_{4}}\text{=}3$，则求$\sum\limits_{i=1}^{4}{\sum\limits_{j=1}^{4}{{{A}_{ij}}}}$的值。
+      $$\left| \begin{matrix}   A & \beta   \\   {{\beta }^{T}} & b  \\\end{matrix} \right|$$ </div>
+    <ul class="nav nav-tabs">
+      <li class="opt" opt-order="1"> <a>A. $\frac{3}{x^2}$</a> </li>
+      <li class="opt" opt-order="2"> <a>B. $\sqrt{3^xy}$</a> </li>
+      <li class="opt" opt-order="3"> <a>C. $\frac{3x}{\sqrt{x}}$</a> </li>
+      <li class="opt" opt-order="4"> <a>D. $\overrightarrow{3a}$</a> </li>
+    </ul>
+    <div><a href="#103" open-pos="3" data-toggle="tab">下一题</a></div>
+  </div>
+
+  <div class="tab-pane fade" id="103">
+    <div class="context">「行列」$$\left| \begin{matrix}   A & \beta   \\   {{\beta }^{T}} & b  \\\end{matrix} \right|$$ </div>
+    <ul class="nav nav-tabs">
+      <li class="opt" opt-order="1"> <a>A. $\frac{3}{x^2}$</a> </li>
+      <li class="opt" opt-order="2"> <a>B. $\sqrt{3^xy}$</a> </li>
+      <li class="opt" opt-order="3"> <a>C. $\frac{3x}{\sqrt{x}}$</a> </li>
+      <li class="opt" opt-order="4"> <a>D. $\overrightarrow{3a}$</a> </li>
+    </ul>
+    <div><a href="#104" open-pos="4" data-toggle="tab">下一题</a></div>
+  </div>
+
+  <div class="tab-pane fade" id="104">
+    <div class="context">
+      若有定义<code>int x=3,y=2</code>和<code>float a=2.5,b=3.5</code>,则表达式: <code>(x+y)%2+(int)a/(int)b</code>的值是 </div>
+    <ul class="nav nav-tabs">
+      <li class="opt" opt-order="1"> <a>A. $\frac{3}{x^7}$</a> </li>
+      <li class="opt" opt-order="2"> <a>B. $\sqrt{3^x}$</a> </li>
+      <li class="opt" opt-order="3"> <a>C. $\sqrt{x}$</a> </li>
+      <li class="opt" opt-order="4"> <a>D. <code>char&lt;int&lt;=float</code></a> </li>
+    </ul>
+    <div><a href="#101" open-pos="1" data-toggle="tab">下一题</a></div>
+  </div>
+
+
+<div></div>
+<div class="footer">
+  <p>Copyright &copy; 2014-2016 四角鸣墨题库</p>
+</div>
+</body>
+</html>

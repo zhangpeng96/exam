@@ -1,0 +1,26 @@
+[
+    {
+        "uid": 38872,
+        "answer": "1",
+        "validate": "exact",
+        "time": 80
+    },
+    {
+        "uid": 38873,
+        "answer": "3",
+        "validate": "case",
+        "time": 40
+    },
+    {
+        "uid": 38874,
+        "answer": "2",
+        "validate": "space",
+        "time": 80
+    },
+    {
+        "uid": 38875,
+        "answer": "1",
+        "validate": "sc",
+        "time": 90
+    }
+]
