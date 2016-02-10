@@ -1,0 +1,28 @@
+[
+    {
+        "listID": 2237595,
+        "msg": "new program"
+    },
+    {
+        "uid": 5532001,
+        "time": 336852436,
+        "duration": 60,
+        "frequency": 3,
+        "isHint": 4,
+        "isTimeout": true,
+        "result": true,
+        "score": 0.8,
+        "postAnswer": "3"
+    },
+    {
+        "uid": 5532002,
+        "time": 336852497,
+        "duration": 30,
+        "frequency": 2,
+        "isHint": 0,
+        "isTimeout": true,
+        "result": false,
+        "score": 1,
+        "postAnswer": "2"
+    }
+]
