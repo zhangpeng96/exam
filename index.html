@@ -10,7 +10,6 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
-<title>每日录入</title>
 <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/main.css" />
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
@@ -21,7 +20,9 @@
 MathJax.Hub.Config({
   tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
   "HTML-CSS": {
-    linebreaks: { automatic: true, width: "container" }          
+    availableFonts: ["STIX","TeX"],
+    scale: 94 ,
+    linebreaks: { automatic: true, width: "container" }     
   }              
 });
 </script>
@@ -40,7 +41,7 @@ MathJax.Hub.Config({
     <div class="context">
       题目开始
     </div>
-    <div class="next"><a href="#101" open-pos="1"  data-toggle="tab">开始</a></div>
+    <div class="next2"><a href="#101" open-pos="1"  data-toggle="tab">开始</a></div>
   </div>
 
   <div class="tab-pane fade" id="101">
@@ -64,10 +65,22 @@ MathJax.Hub.Config({
       <li class="opt" opt-order="4"> <a>D. $\overrightarrow{3a}$</a> </li>
     </ul>
     <div class="next"><a href="#103" open-pos="3" data-toggle="tab">下一题</a></div>
+    <div class="panel panel-default">
+     <div class="panel-heading">
+        提示
+     </div>
+     <div class="panel-body">
+        提示的内容
+     </div>
+    </div>
   </div>
 
   <div class="tab-pane fade" id="103">
-    <div class="context">「行列」$$\left| \begin{matrix}   A & \beta   \\   {{\beta }^{T}} & b  \\\end{matrix} \right|$$ </div>
+    <div class="context">
+    求极限：
+$$\underset{x\to 0}{\mathop{\lim }}\,\frac{{{e}^{-\frac{1}{{{x}^{2}}}}}}{{{x}^{100}}}$$
+
+    </div>
     <ul class="nav nav-tabs">
       <li class="opt" opt-order="1"> <a>A. $\frac{3}{x^2}$</a> </li>
       <li class="opt" opt-order="2"> <a>B. $\sqrt{3^xy}$</a> </li>
@@ -75,6 +88,9 @@ MathJax.Hub.Config({
       <li class="opt" opt-order="4"> <a>D. $\overrightarrow{3a}$</a> </li>
     </ul>
     <div class="next"><a href="#104" open-pos="4" data-toggle="tab">下一题</a></div>
+    <div class="solution">
+观察可知，本题是典型的正三角形结构，直接求出难度很大，如果用洛必达法则会使得分母次数更高，无法解题。那么应当化为倒三角结构，即令$t=\frac{1}{{{x}^{2}}}$（因为分母的次数也是偶数次），因此得到分子幂函数分母自然指数函数的式子。使用多次洛必达法则，则幂函数会连续求导成为常数，自然指数函数求导不变，形成$\frac{0}{\infty}$型，极限即为0。
+    </div>
   </div>
 
   <div class="tab-pane fade" id="104">
@@ -87,10 +103,23 @@ MathJax.Hub.Config({
       <li class="opt" opt-order="4"> <a>D. <code>char&lt;int&lt;=float</code></a> </li>
     </ul>
     <div class="next"><a href="#101" open-pos="1" data-toggle="tab">下一题</a></div>
+
   </div>
 
 
 <div></div>
+
+<div class="fixed-btn">
+  <a class="go-top" href="javascript:void(0)" title="返回顶部" style="display: inline-block;"></a><a class="qrcode" id="getTip" title="提示">提</a> <a class="writer" target="_blank" href="mailto:exam@zhangpeng96.cn" style="font-size: 12px;" title="反馈">反馈</a>
+
+  <div id="bottom-qrcode" class="modal panel-modal hide fade in">
+    <h4>微信关注</h4>
+
+    <div class="panel-body"><img alt="微信关注" width="128" height="128" src="http://www.runoob.com/wp-content/themes/runoob/assets/img/qrcode.jpg" /></div>
+  </div>
+</div>
+
+
 <div class="footer">
   <p>Copyright &copy; 2014-2016 四角鸣墨题库</p>
 </div>
