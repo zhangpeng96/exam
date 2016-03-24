@@ -10,6 +10,7 @@ $(function(){
   $('.nav-tabs > li').css({'float':'none','margin-bottom':'0'});
   $(".next").hide();
   $(".panel").hide();
+  $(".showAnswer").hide();
   /*
     全局载入脚本
   */
@@ -19,7 +20,7 @@ $(function(){
   timer('start');
 
   /*
-    选择、填空题布尔验证函数
+    填空题布尔验证函数
   */
   function validate(input1,input2,type){
     var str1 = $.trim(input1);
@@ -90,7 +91,6 @@ $(function(){
                 "duration": durationRecord,
                 "frequency": 3,
                 "isHint": 0,
-                //isHint算法计算不出来
                 "isTimeout": timeOut,
                 "result": gloResult,
                 "score": calcScore(gloResult),
@@ -124,26 +124,33 @@ $(function(){
 
 
 /*
-  选择题判断机制
+  填空题判断机制
 */
 
-    $(".tab-pane li").click(function(){
+    $(".submitBtn").click(function(){
       // 计时停止
       timer('stop');
       //
-      // 由于选择器是在页面加载时就已经确定的，所以无法使用变量pos
-      var input = $(this).attr('opt-order');
+      var input = $(this).parent().find('input').val();
       gloPost = input;
       // 显示「下一题」按钮
-      $(this).parent().parent().find('.next').show();     
-
+      $(this).parent().find('.next').show();      
+      $(this).parent().find('.showAnswer').show();   
+      $(this).parent().find('input').prop("readonly","");
       // 题目result返回数据
-      if(validate(input, msg[pos-1].answer, msg[pos-1].validate)){
-        $(this).addClass('answerTrue');
+      vali_input = msg[pos-1].answer;
+      vali_type = msg[pos-1].vali;
+
+      if( validate(input, vali_input, vali_type) ){
+        //$(this).addClass('answerTrue');
+        alert("right");
+        $(this).parent().find('input').addClass("input-right");
         gloResult = true;
       }else{
-        $(this).addClass('answerFalse');
-        $(this).siblings('[opt-order=\"'+msg[pos-1].answer+'\"]').addClass('answerTrue');
+        //$(this).addClass('answerFalse');
+        alert("wrong");
+        $(this).parent().find('input').addClass("input-wrong");        
+
         gloResult = false;
       }
       // 进度条暂停
@@ -176,26 +183,26 @@ $(function(){
   var msg = [
     {
         "uid": 38872,
-        "answer": "1",
-        "validate": "exact",
+        "answer": "key",
+        "vali": "exact",
         "time": 40
     },
     {
         "uid": 38873,
         "answer": "3",
-        "validate": "case",
+        "vali": "case",
         "time": 20
     },
     {
         "uid": 38874,
         "answer": "2",
-        "validate": "space",
+        "vali": "space",
         "time": 80
     },
     {
         "uid": 38875,
         "answer": "1",
-        "validate": "sc",
+        "vali": "sc",
         "time": 90
     }
 ];
