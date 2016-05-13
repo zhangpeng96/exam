@@ -1,7 +1,7 @@
 /*
     四角鸣墨题库(New Version)
-    version: 3.2.2
-    date:  2016/5/2 21:2
+    version: 3.2.22
+    date:  2016/5/6 20:20
 */
 $(function() {
 
@@ -70,6 +70,7 @@ function accessData(){
             break;
             default:
               return -1;
+            }
       },
       entRead: function(key){
           switch(key){
@@ -126,11 +127,6 @@ function accessData(){
   }
   // 闭包结构
 }
-
-var e = accessData();
-e.posInc();
-console.log(e.posRead());
-console.log(e.entRead('postAnswer'));
   
   /* 获得localStorage.qPos数据 */
   function getHistoryPos() {
@@ -324,27 +320,54 @@ console.log(e.entRead('postAnswer'));
   }
   
   /* 显示下一题按钮 */
-  function showNextBtn() {
-    $(this).parent().parent().find('.next').show();
+  function showNextBtn(obj) {
+    obj.parent().parent().find('.next').show();
   }
   
   /* 更新答案验证后的提示UI */
   function markVali(type, obj, para) {
     switch (type) {
       case 'OT':
-        $(this).addClass('answerTrue');
+        obj.addClass('answerTrue');
         break;
       case 'OF':
-        $(this).addClass('answerFalse');
-        $(this).siblings('[opt-order=\"' + para.answer + '\"]').addClass('answerTrue');
+        obj.addClass('answerFalse');
+        obj.siblings('[opt-order=\"' + para.answer + '\"]').addClass('answerTrue');
         break;
       case 'OFO':
-        $(this).addClass('answerFalse');
+        obj.addClass('answerFalse');
         break;
       default:
         return -1;
     }
   }
+
+  function nextQue() {    
+    
+  }
+
+  /*
+  功能逻辑
+  */
+  intialLayout();
+  // 布局初始化
+  var e = accessData();
+  console.log(e.posRead());
+  // entry初始化
+   $(".tab-pane li").click(function(){
+    var pos = e.posRead();
+      var input = $(this).attr('opt-order');
+      if(validate(input, msg[pos-1].answer, msg[pos-1].validate)){
+        markVali( 'OT',$(this) );
+      }else{
+        $(this).addClass('answerFalse');
+        $(this).siblings('[opt-order=\"'+msg[pos-1].answer+'\"]').addClass('answerTrue');
+      }
+      showNextBtn($(this));
+  });
+  $('a[data-toggle="tab"]').click(function(){    
+    e.posInc();
+  })
 
   /*
   数据键值
