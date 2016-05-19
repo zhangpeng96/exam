@@ -1,0 +1,27 @@
+{
+	"bookID":		41630,
+	"questionID":	10002,
+	"questionType":	2,
+	"questionTime":	80,
+	"context":		"context",
+	"difficulty":	0.8,
+	"fallibility":	0.7,
+	"tags":			[],
+	"options":		[],
+	"answerVali":  	"sc",
+	"rightAnswer":	"3",
+	"solution":		"dstr",
+	"questionHint": [],
+	"knowledges":	[],
+	"multiEnable":	{
+		"mathjax":	true,
+		"raintree":	true,
+		"cdn-g1":	true
+	},
+	"questionMsg":	{
+		"years":	"",
+		"articles":	"",
+		"source": 	"",
+		"timestamp":1355555555
+	}
+}
