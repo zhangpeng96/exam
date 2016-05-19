@@ -1,0 +1,26 @@
+{
+	"uid":		300000,
+	"title":	"Title",
+	"description":"this",
+	"contents": [
+		{
+			"sequence": true,
+			"group":	false,
+			"from":		4000000,
+			"to":		4000002,
+			"type":		32
+		},
+		{
+			"sequence": false,
+			"group":	false,
+			"uid":		4000003,
+			"type":		33
+		},
+		{
+			"sequence": true,
+			"group":	true,
+			"uid":		[4000010,4000011,4000012,4000013],
+			"type":		32
+		}
+	]
+}
