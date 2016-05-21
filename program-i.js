@@ -1,7 +1,7 @@
 /*
     四角鸣墨题库(New Version) 填空校对题
-    version: 3.2.23
-    date:  2016/5/13 23:16
+    version: 3.2.24
+    date:  2016/5/21 11:11
 */
 $(function() {
 
@@ -27,10 +27,7 @@ function accessData(){
       pos: 0,
       count: 0
   };  // 常用的状态数据
-  var postLocal = {
-    "data"  : 'string',
-    "ent": 'string'
-    };
+  var postLocal = new Array(5);
       // 本地数据存储
   var reserve;
       // 保留数据
@@ -110,7 +107,7 @@ function accessData(){
           }
       },
       setLocal: function() {
-          postLocal.ent[status.pos] = {
+          postLocal[status.pos] = {
             "uid" :     entry.uid,
             "time":     entry.time,
             "duration": entry.duration,
@@ -187,7 +184,7 @@ function accessData(){
   
   /* 写入localStorage题目数据 */
   function writeStorage() {
-    localStorage.setItem("postData", e.readLocal());
+    localStorage.setItem("postData", JSON.stringify(e.readLocal()) );
   }
 
 /*
@@ -402,11 +399,11 @@ function accessData(){
    })/*
   e.entSet('uid', msg[e.posRead()] );
   e.entSet('time', msg[e.posRead()] ); */
-   e.debug();
+  e.debug();
 
 
   $('a[data-toggle="tab"]').click(function(){
-
+    writeStorage();
     refreshProgress(msg[e.posRead()].time);
     e.posInc();
   })
